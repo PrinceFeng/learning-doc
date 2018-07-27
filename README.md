@@ -1,2 +1,3 @@
 # learning-doc
-study note
+
+存放一些技术的学习文档
