@@ -1,7 +1,6 @@
 git init   初始化一个仓库
 git status   查看当前仓库状态（是否有未提交的修改）
 
-
 git add <file_name>         将修改提交到暂存区
 git all --all  (把所有变化都保存)
 git reset HEAD <file_name>  将修改总暂存区移除
