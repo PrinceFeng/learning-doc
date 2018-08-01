@@ -1,6 +1,8 @@
 ---遇到多个构造器参数时考虑用构建器---
+
 静态工厂和构造器有个共同的局限性：不能很好地扩展到大量的可选参数。
 比如：
+
 public class NutritionFacts {
 	private final int servingSize;     // required
 	private final int servings;      // required
@@ -35,13 +37,16 @@ public class NutritionFacts {
 
 	}
 }
+
 当你要创建NutritionFacts的实例的时候，就利用参数列表最短的构造器，但该列表包含了要设置的所有参数。
 这个构造器调用通常需要许多你本不想设置的参数，但是还是不得不为他们传递值。
 
 由此可见，重叠构造器模式可行，但是当有许多参数的时候，客户端代码就很难编写，并且难以阅读。
 
 改进的方法---JavaBeans模式
+
 调用一个无参构造器来创建对象，然后调用setter方法来设置每个必要的参数：
+
 public class NutritionFacts {
 	private final int servingSize = -1;     // required
 	private final int servings = -1;      // required
@@ -57,6 +62,7 @@ public class NutritionFacts {
 	// .....
 
 }
+
 这种模式下创建实例：
 NutritionFacts fact = new NutritionFacts();
 fact.setServingSize(250);
@@ -120,6 +126,7 @@ public class NutritionFacts {
 		carbohydrate = builer.carbohydrate;
 	}
 }
+
 这里NutritionFacts是不可变的，所有默认的参数值都单独放在一个地方，builder的setter方法返回builder
 本身，以便可以把调用链接起来。创建对象实例：
 NutritionFacts coca = new NutritionFacts.Builder(290, 5).calories(90),sodium(33),carbohydrate(22).builder();
