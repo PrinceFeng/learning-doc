@@ -26,3 +26,6 @@ git checkout  <branch_name>   切换分支
 git merge <branch_name>  合并分支
 
 git remote -v 查看远程主机名及网址
+
+git branch -r 查看远程仓库有哪些分支
+git branch -a 查看所有分支（包括本地和远程）
