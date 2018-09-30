@@ -29,3 +29,6 @@ git remote -v 查看远程主机名及网址
 
 git branch -r 查看远程仓库有哪些分支
 git branch -a 查看所有分支（包括本地和远程）
+
+git log  查看历史提交记录
+git log  --reverse 逆序查看
