@@ -46,7 +46,28 @@ Java 关键术语
 * **如果将一个类声明为final，则其中的方法自动为final，而不包括域**
 * 抽象类不能被实例化，但是可以引用非抽象的子类对象
 * 关于Object类
-  * 168
-
-
-
+  * hashCode，每个对象有一个默认的hashCode，其值为对象的存储地址
+  * 如果重新定义equals方法，就必须重写hashCode方法，以便用户可以将对象插入到散列表中
+  * hashCode方法应该返回一个整数值，并合理组合实例域的散列码，以便让不同对象的散列码分布均匀
+  * equals与hashCode的定义必须一致，如果x.equals(y)返回true，那么x.hashCode()与y.hashCode()返回值相同。例如：如果定义Person.equals比较域ID，那么hashCode就需要散列ID，而不是其他域
+  * 如果存在数组类型的域，可以用静态的Arrays.hashCode计算散列码，这个散列码由数组元素的散列码组成
+  * getClass().getName()获得当前类名
+  * 只要对象与一个字符串通过“+”连接，java编译器就会自动调用toString方法
+  * Object类中的toString方法，用来打印出对象所属的类名和散列码
+  * 数组继承了Object类的toString方法，所以打印数组最好用Arrays.toString(s)，打印多维数组用Arrays.deepToString(s)
+  * **建议为自定义的每个类增加toString方法**
+  * 由于每个值分别包装在对象中，因此ArrayList<Integer>的效率远远低于int[]
+* 枚举类
+  * 比较枚举类型的值，直接使用“==”就可以了
+  * 所有枚举类型都是Enum类的子类
+  * 枚举类中toString方法返回枚举常量名，如Size.SMALL.toString()返回字符串“SMALL”
+  * 每个枚举类都有一个静态的values方法，它返回包含全部枚举值得数组
+* 反射，能够分析类能力的程序称为反射
+  * class类
+    * getName方法返回类的名字，如e.getName()
+    * Class.forName(className)返回类名对应的Class对象
+    * T为任意的java类型（这个类型未必是一种类，如int.class是一个Class类型的对象），则T.class表示匹配的类对象
+    * Class类实际上是一个泛型类，如Person.class的类型是Class<Person>
+    * newInstance()可以动态的创建一个类的实例，如e.getClass().newInstance()，创建了一个与e具有相同类类型的实例
+    * 将forName与newInstance配合使用，可以根据字符串中的类名创建一个对象：如```String s="java.util.Random"; Object m=Class.forName(s).newInstance();```
+    * 
