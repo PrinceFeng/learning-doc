@@ -126,6 +126,22 @@ Java 关键术语
 
 ## 第八章 泛型
 
+* 泛型类可以看出是普通类的工厂
+* 定义泛型类：``public static <T> T getMiddle(T... a)``
+* 调用泛型方法：``String middle = Test.<String>getMiddle("tim", "Tome");``
+* 不支持泛型类型的数组
+* 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
