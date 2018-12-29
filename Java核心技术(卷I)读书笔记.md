@@ -130,9 +130,12 @@ Java 关键术语
 * 定义泛型类：``public static <T> T getMiddle(T... a)``
 * 调用泛型方法：``String middle = Test.<String>getMiddle("tim", "Tome");``
 * 不支持泛型类型的数组
+* ``? extends Employee`` 限定为Employee所有子类
+* ``? super Manager`` 限定为Manager所有超类
+
+## 第九章 集合
+
 * 
-
-
 
 
 
