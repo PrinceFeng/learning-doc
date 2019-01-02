@@ -146,7 +146,7 @@ Java 关键术语
 * java6引入双端队列Deque
 * LinkedHashSet  LinkedHashSet用来记住插入元素的顺序
 * EnumSet枚举类型元素集的高效实现，EnumMap键类型为枚举类型的map
-* 
+* 405
 
 
 
