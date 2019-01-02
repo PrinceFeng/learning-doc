@@ -21,4 +21,6 @@
 
   * #### [Java核心技术(卷I)读书笔记](Java核心技术(卷I)读书笔记.md)
 
+* JavaScript 
 
+  * [JS基本语法学习](js/javascript.md)
