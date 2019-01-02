@@ -139,7 +139,18 @@ Java 关键术语
 
 ![20181229154028](https://github.com/PrinceFeng/learning-doc/blob/master/images/20181229154028.png)
 
+* 避免使用以整数索引表示链表中位置的方法
+* ArrayList是一个动态再分配的对象数组
+* Vector是线程同步的动态数组，所有的方法都是同步的，建议在不需要同步时使用ArrayList
+* HashSet无序的散列集合，TreeSet有序的集合，使用的是红黑树进行排序
+* java6引入双端队列Deque
+* LinkedHashSet  LinkedHashSet用来记住插入元素的顺序
+* EnumSet枚举类型元素集的高效实现，EnumMap键类型为枚举类型的map
 * 
+
+
+
+
 
 
 
