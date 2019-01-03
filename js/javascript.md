@@ -101,7 +101,28 @@
   * onkeydown：按下键盘
   * onload：浏览器完成页面的加载
 
-* (JavaScript字符串)
+* 字符串可以是对象，不用创建String对象，会拖慢运行速度
+
+  ```javascript
+  var x = "hello";   // 类型为string
+  var y = new String("hello"); // 类型为object
+  ```
+
+* ===为绝对相等，即数据类型和值都必须相等
+
+* undefined变量声明但是没有赋值，null表示一个空对象引用，二者值相等（null==undefined），但是类型不等
+
+* NaN的类型是number
+
+* JavaScript中变量可以先使用后声明
+
+* 变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
+
+* 
+
+
+
+
 
 
 
