@@ -1,4 +1,4 @@
-# Java核心技术 卷I 读书笔记
+# Java核心技术 卷I（v10）
 
 ## 第一章 概述
 
@@ -146,11 +146,31 @@ Java 关键术语
 * java6引入双端队列Deque
 * LinkedHashSet  LinkedHashSet用来记住插入元素的顺序
 * EnumSet枚举类型元素集的高效实现，EnumMap键类型为枚举类型的map
-* 405
 
+## 第十、十一、十二、十三章  GUI
 
+## 第十四章 并发
 
+* 进程有自己的变量，而线程之间共享变量
 
+* 守护线程的唯一用途是为其他线程提供服务
+
+* ReentrantLock解锁操作必须放在finally块中
+
+  ```java
+  mylock.lock();  // a ReentrantLock object
+  try{
+      ...
+  }finally{
+      mylock.unlock();
+  }
+  ```
+
+* 公平锁比常规锁要慢很多，即使使用公平锁，也无法保证线程调度是公平的
+
+* CurrentHashMap中不允许有null值
+
+* 完结。
 
 
 
