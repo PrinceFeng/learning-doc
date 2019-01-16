@@ -28,9 +28,34 @@ Spring Boot最重要的核心：
 * 编写一个显示的配置，即可覆盖Spring Boot的自动配置
 * Spring Boot的默认错误也为error.xx
 
+## 第四章 测试
 
+* 模拟Spring MVC
 
+  Spring的Mock MVC框架模拟了Spring MVC的很多功能
 
+## 第六章 Spring Boot 与 Grails
+
+## 第七章 Actuator
+
+Spring Boot Actuator的关键特性是在应用程序里提供众多web端点，通过他们可以了解应用程序运行时的内部状况
+
+* 配置
+
+  ```xml
+  </dependency>
+    <groupId>org.springframework.boot</groupId> 
+    <artifactId>spring-boot-starter-actuator</artifactId> 
+  </dependency>
+  ```
+
+* 端点分为三大类：配置端点、度量端点、其他端点
+
+* 查看配置明细
+
+  * /beans(本地访问地址：http://localhost:8080/beans)，返回json文档，描述上下文每个Bean的情况，包括其java类型以及注入的其他Bean
+  * /env 会生成应用程序可用的所有环境属性列表，包括环境变量、JVM属性、命令行参数，以及application.yml文件提供的属性
+  * /mappings 生成端点到控制器的映射
 
 
 
