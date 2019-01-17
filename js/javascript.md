@@ -146,12 +146,116 @@
 * 函数可以存储在变量中
 
   ```javascript
-  var x = function(a, b) {return a * b};
+  var x = function(a, b) {return a * b};  // 这里其实是一个匿名函数，通过变量来调用
   // 调用
   var z = x(4, 3)
   ```
 
+* ES6新增箭头函数
+
+  ```javascript
+  const x = (x, y) => { return x * y };
+  // 如果函数体只有一个语句，可以省略return和大括号，如下：
+  const x = (x, y) => x * y
+  ```
+
+* ES6函数可以自带参数
+
+  ```javascript
+  function myFunc(x, y=10){...}
+  ```
+
+* JavaScript函数有个内置的arguments对象，它是一个函数调用的参数数组
+
+  ```javascript
+  x = findMax(1, 123, 500, 115, 44, 88);
+  function findMax() {
+      var i, max = arguments[0];
+      
+      if(arguments.length < 2) return max;
+   
+      for (i = 0; i < arguments.length; i++) {
+          if (arguments[i] > max) {
+              max = arguments[i];
+          }
+      }
+      return max;
+  }
+  ```
+
+* JavaScript闭包，闭包是可访问上一层函数作用域里变量的函数，即便上一层函数已经关闭
+
+  ```javascript
+  var add = (function () {
+      var counter = 0;
+      return function () {return counter += 1;}
+  })();
+   
+  add();
+  add();
+  add();
+  ```
+
   
 
+## JavaScript HTML DOM
 
+* 通过JavaScript操作HTML元素有三种方式：
+
+  * 通过id找到HTML元素
+
+    ```javascript
+    var x = document.getElementById("idname");
+    ```
+
+  * 通过标签名找到
+
+    ```javascript
+    var y = document.getElementsByTagName("p");
+    ```
+
+  * 通过类名找到
+
+    ```javascript
+    var z = document.getElementsByClassName("clsName");
+    ```
+
+* JS改版HTML样式
+
+  ```javascript
+  document.getElementById("idname").style.color = "red";
+  ```
+
+* onload和onunload事件会在用户进入或离开页面时被触发，onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本
+
+* onchange事件常结合对输入字段的验证来使用
+
+* onmouseover和onmouseout事件用于鼠标移到HTML元素上或移出时触发
+
+* onmousedown、onmouseup，点击鼠标时触发onmousedown事件，释放鼠标时触发onmouseup事件
+
+* onfocus当输入字段获得焦点时触发
+
+* addEventListener()方法用于向指定元素添加事件
+
+  ```javascript
+  element.addEventListener(event, function, useCapture);
+  ```
+
+   第一个参数是事件的类型 (如 "click" 或 "mousedown")
+
+   第二个参数是事件触发后调用的函数
+
+   第三个参数是个布尔值用于描述事件是冒泡还是捕获。该参数是可选的
+
+  **注意不要使用"on"前缀，如使用"click"，而不是"onclick"**
+
+* 事件冒泡或事件捕获，在冒泡中，内部元素的事件先被触发，然后再触发外部元素；在捕获中，先触发外部元素的事件，然后才触发内部元素；
+
+  ```javascript
+  // useCapture默认值为false，即冒泡传递，当为true时，使用捕获传递
+  addEventListener(event, function, useCapture);
+  ```
+
+* removeEventListener()移除由addEventListener()添加的事件
 
