@@ -118,11 +118,40 @@
 
 * 变量提升：函数声明和变量声明总是会被解释器悄悄地被"提升"到方法体的最顶部
 
-* 
+* 关于JavaScript中的this关键字
 
+  * 在方法中，this表示该方法所属的对象
+  * 如果单独使用，this表示全局对象
+  * 在函数中，this表示全局对象
+  * 函数中的严格模式下，this是未定义的（undefined）
+  * 在事件中，this表示接收事件的元素
+  * 类似call()和apply()方法可以将this引用到任何对象
 
+* ECMAScript 6 新增关键字：
 
+  * let：声明的变量只在let命令所在的代码块内有效
+  * const：声明一个只读的常量，一旦声明，值就不能改变
 
+* 使用var声明的变量不具有块级作用域，在{}在依然能访问；ES6之后，可以用let声明变量，let变量只在{}内有效
+
+* JavaScript:void(0)：不返回任何值
+
+* href="#"与href="javascript:void(0)"的区别：
+
+  * "#"包含一个位置，默认的锚是"#top"，也就是网页的顶端，在页面很长时可以用"#"+id定位页面具体位置
+  * javascript:void(0)仅表示一个死链接
+
+## JS函数
+
+* 函数可以存储在变量中
+
+  ```javascript
+  var x = function(a, b) {return a * b};
+  // 调用
+  var z = x(4, 3)
+  ```
+
+  
 
 
 
