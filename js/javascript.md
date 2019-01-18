@@ -259,3 +259,38 @@
 
 * removeEventListener()移除由addEventListener()添加的事件
 
+## JavaScript高级特性
+
+* 在JavaScript中，数字不分为整数类型和浮点型类型，所有的数字都是浮点型
+* Boolean中的false：0、-0、null、“”、false、undefined、NaN
+* Number对象
+* String
+* Date日期
+* Array数组
+* Math
+* RegExp正则
+
+## JS 浏览器对象模型
+
+* window.screen对象包含用户屏幕的信息，使用时可省略window
+
+  ```javascript
+  <script>
+  document.write("可用宽度: " + screen.availWidth);
+  </script> 
+  ```
+
+* window.location获得当前页面的地址信息
+
+* window.history 浏览器历史
+
+* window.navigator有关访问者浏览器信息（得到的信息不可靠）
+
+* cookie以键值对形式存储于用户电脑上的文本文件中
+
+## ES6的一些新特性
+
+2, 3，9，15  19   20    23  24
+
+
+
