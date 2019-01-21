@@ -290,7 +290,100 @@
 
 ## ES6的一些新特性
 
-2, 3，9，15  19   20    23  24
+* let不允许在相同的作用域内，重复声明同一个变量
+
+* const只在声明所在的块级作用域内才有效
+
+* 数组的解构赋值，ES6允许以下赋值：
+
+  ```javascript
+  // 这里可以按照对应位置给对应变量赋值，称为解构，如果解构不成功，值就为undefined
+  let [a, b, c] = [1, 2, 3];
+  ```
+
+* 解构赋值允许指定默认值
+
+  ```javascript
+  let [foo = true] = [];
+  foo // true
+  
+  let [x, y = 'b'] = ['a']; // x='a', y='b'
+  let [x, y = 'b'] = ['a', undefined]; // x='a', y='b'
+  ```
+
+  注意，只有当一个数组成员严格等于undefined，默认值才会生效
+
+  ```javascript
+  let [x = 1] = [undefined];
+  x // 1
+  
+  let [x = 1] = [null];
+  x // null
+  ```
+
+* 对象的解构赋值
+
+  ```javascript
+  let { bar, foo } = { foo: "aaa", bar: "bbb" };
+  foo // "aaa"
+  bar // "bbb"
+  
+  let { baz } = { foo: "aaa", bar: "bbb" };
+  baz // undefined
+  ```
+
+  对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性没有次序，变量必须与属性同名，才能取到正确的值。 
+
+* 由于数组本质是对象，可以对数组进行对象属性的解构
+
+  ```javascript
+  let arr = [1, 2, 3];
+  let {0 : first, [arr.length - 1] : last} = arr;
+  first // 1
+  last // 3
+  ```
+
+* 字符串的解构赋值
+
+  ```javascript
+  const [a, b, c, d, e] = 'hello';
+  a // "h"
+  b // "e"
+  c // "l"
+  d // "l"
+  e // "o"
+  // 类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。
+  let {length : len} = 'hello';
+  len // 5
+  ```
+
+* 函数参数得解构
+
+  ```javascript
+  [[1, 2], [3, 4]].map(([a, b]) => a + b);
+  // [ 3, 7 ]
+  
+  // 函数参数的解构也可以使用默认值。
+  function move({x = 0, y = 0} = {}) {
+    return [x, y];
+  }
+  
+  move({x: 3, y: 8}); // [3, 8]
+  move({x: 3}); // [3, 0]
+  move({}); // [0, 0]
+  move(); // [0, 0]
+  ```
+
+* 
+* 
+* 
+* 
+
+
+
+
+
+3，9，15  19   20    23  24
 
 
 
